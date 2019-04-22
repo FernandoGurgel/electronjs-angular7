@@ -1,0 +1,13 @@
+{
+  "name": "electron-typescript",
+  "version": "1.0.0",
+  "main": "main.js",
+  "license": "MIT",
+  "scripts": {
+    "start":"electron ."
+  },
+  "author": "Fernando Gurgel",
+  "devDependencies": {
+    "electron": "4.1.4"
+  }
+}

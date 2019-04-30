@@ -1,15 +1,21 @@
-const {app, BrowserWindow} = require('electron')
+const electron = require('electron');
+const { app, BrowserWindow } = require('electron');
 
-let mainWindow
+let win;
+let mainWindow;
 
 function createWindow () {
+  const { width, height } = electron.screen.getPrimaryDisplay().workAreaSize
+  
   mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: width,
+    height: height,
+    setMenu: false,
     webPreferences: {
       nodeIntegration: true
     }
   })
+  mainWindow.setFullScreen(true);
   
 //   console.log(__dirname+"/timer-angular/dist/timer-angular/index.html");
   mainWindow.loadURL(`file://${__dirname}/timer-angular/dist/timer-angular/index.html`);
